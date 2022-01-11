@@ -13,9 +13,11 @@ import static org.junit.Assert.assertEquals;
 public class CustomerTest {
 
     private Customer customer;
+//    private Dealership dealership;
     private ArrayList<Vehicle> ownedCars;
     private Vehicle car1;
     private Vehicle car2;
+    private Vehicle car3;
     private Engine engine1;
     private Tyres tyres1;
     private GearBox gearBox1;
@@ -35,6 +37,8 @@ public class CustomerTest {
         gearBox2 = new GearBox(false, 4);
         car1 = new Vehicle(5000.00, "blue", 2000, engine1, tyres1, gearBox1, CarType.PETROL);
         car2 = new Vehicle(5000.00, "black", 2000, engine2, tyres2, gearBox2, CarType.ELECTRIC);
+        car3 = new Vehicle(5000.00, "red", 20000, engine2, tyres2, gearBox2, CarType.ELECTRIC);
+
         ownedCars = new ArrayList<>();
         ownedCars.add(car1);
         ownedCars.add(car2);
@@ -50,5 +54,11 @@ public class CustomerTest {
     @Test
     public void hasOwnedCars(){
        assertEquals(2, customer.getOwnedCars().size());
+    }
+
+    @Test
+    public void canBuyCar() {
+        customer.buyCar(car3);
+        assertEquals(3, customer.getOwnedCars().size());
     }
 }

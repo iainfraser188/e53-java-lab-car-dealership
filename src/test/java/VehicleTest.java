@@ -55,6 +55,13 @@ public class VehicleTest {
     @Test
     public void hasType(){
         assertEquals(CarType.PETROL, vehicle.getCarType());
-
     }
+
+    @Test
+    public void canBeDamaged() {
+        vehicle.damage(1000.00);
+        assertEquals(4000.00, vehicle.getPrice(), 0.0);
+    }
+
+    
 }

@@ -14,7 +14,15 @@ public class Customer {
         return money;
     }
 
+    public void decreaseMoney(double cost) {
+        this.money -= cost;
+    }
+
     public ArrayList<Vehicle> getOwnedCars() {
         return ownedCars;
+    }
+
+    public void buyCar(Vehicle car) {
+        this.ownedCars.add(car);
     }
 }

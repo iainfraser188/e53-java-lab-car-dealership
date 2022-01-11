@@ -73,4 +73,12 @@ public class Vehicle {
     public CarType getCarType() {
         return this.type;
     }
+
+    public void damage(double cost) {
+        this.price -= cost;
+    }
+    
+    public void repair(double cost) {
+        this.price += cost;
+    }
 }
